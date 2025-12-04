@@ -1,0 +1,26 @@
+{
+  "name": "ai-image-poc",
+  "version": "1.0.0",
+  "description": "AI 이미지/웹툰 생성 POC - LLM 기반 이미지 생성 도구",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" --names \"backend,frontend\" --prefix-colors \"blue,magenta\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend"
+  },
+  "keywords": [
+    "ai",
+    "image-generation",
+    "webtoon",
+    "llm",
+    "poc"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
